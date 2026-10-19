@@ -1,0 +1,26 @@
+<Project>
+  <!--
+    Versões de todos os pacotes NuGet do back-end, fixadas em um só lugar.
+    As dependências abaixo são as que a equipe pode usar na Sprint 1.
+    Incluir ou trocar dependências é uma decisão de arquitetura: registre em um ADR.
+  -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup Label="API e contrato">
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.13" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Dados">
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.13" />
+  </ItemGroup>
+
+  <ItemGroup Label="Testes">
+    <PackageVersion Include="MSTest" Version="4.5.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.13" />
+    <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
+  </ItemGroup>
+</Project>

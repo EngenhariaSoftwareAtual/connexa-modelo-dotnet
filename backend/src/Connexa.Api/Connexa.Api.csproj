@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    Ponto de entrada do back-end: monta a aplicação a partir dos módulos.
+    Não coloque regra de negócio aqui.
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Connexa.Comum\Connexa.Comum.csproj" />
+    <ProjectReference Include="..\Connexa.Identidade\Connexa.Identidade.csproj" />
+    <ProjectReference Include="..\Connexa.Perfil\Connexa.Perfil.csproj" />
+    <ProjectReference Include="..\Connexa.Grupos\Connexa.Grupos.csproj" />
+    <ProjectReference Include="..\Connexa.Encontros\Connexa.Encontros.csproj" />
+    <ProjectReference Include="..\Connexa.Acompanhamento\Connexa.Acompanhamento.csproj" />
+    <ProjectReference Include="..\Connexa.Painel\Connexa.Painel.csproj" />
+    <ProjectReference Include="..\Connexa.Materiais\Connexa.Materiais.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Necessário para os comandos "dotnet ef migrations". -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

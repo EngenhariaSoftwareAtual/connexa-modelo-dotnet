@@ -1,0 +1,16 @@
+# Complemento do docker-compose.yml da raiz, usado apenas pelo Codespaces / Dev Containers.
+# Os caminhos são relativos à raiz do repositório (pasta do primeiro arquivo compose).
+
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/dotnet:10.0
+    volumes:
+      - ..:/workspaces:cached
+    # Mantém o contêiner ativo; o VS Code se conecta a ele.
+    command: sleep infinity
+    # Compartilha a rede do banco: dentro do ambiente, o PostgreSQL responde em localhost:5432,
+    # exatamente como fora do Codespaces. Nenhuma configuração muda entre os dois.
+    network_mode: service:db
+    depends_on:
+      db:
+        condition: service_healthy

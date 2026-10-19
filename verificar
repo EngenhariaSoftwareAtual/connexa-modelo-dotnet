@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Roda localmente tudo o que o CI roda. Use antes de todo push.
+#   ./verificar            back-end e front-end
+#   ./verificar backend    só o back-end
+#   ./verificar frontend   só o front-end
+#
+# O back-end precisa do PostgreSQL em localhost:5432 (no Codespaces, já está rodando;
+# fora dele: docker compose up -d db).
+set -euo pipefail
+cd "$(dirname "$0")"
+
+alvo="${1:-tudo}"
+
+verificar_backend() {
+  echo "==> Back-end: compilação, testes de aceitação e fronteiras entre módulos"
+  (cd backend && dotnet build Connexa.slnx && dotnet test --no-build)
+}
+
+verificar_frontend() {
+  echo "==> Front-end: lint, testes e build"
+  (cd frontend && { [ -d node_modules ] || npm ci; } && npm run verificar)
+}
+
+verificar_instrucoes() {
+  echo "==> Instruções do agente sincronizadas"
+  cmp -s AGENTS.md .github/copilot-instructions.md || {
+    echo "ERRO: AGENTS.md e .github/copilot-instructions.md estão diferentes."; exit 1; }
+}
+
+case "$alvo" in
+  backend)  verificar_backend ;;
+  frontend) verificar_frontend ;;
+  tudo)     verificar_instrucoes; verificar_backend; verificar_frontend ;;
+  *) echo "Uso: ./verificar [backend|frontend]"; exit 2 ;;
+esac
+
+echo ""
+echo "Verificação concluída sem falhas."

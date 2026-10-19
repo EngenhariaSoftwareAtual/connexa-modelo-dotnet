@@ -1,0 +1,56 @@
+{
+  "name": "Connexa — .NET + React",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.devcontainer.yml"
+  ],
+  "service": "app",
+  "runServices": [
+    "app",
+    "db"
+  ],
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "shutdownAction": "stopCompose",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb"
+  },
+  "forwardPorts": [
+    5173,
+    8080,
+    5432
+  ],
+  "portsAttributes": {
+    "5173": {
+      "label": "Front-end (Vite)",
+      "onAutoForward": "openBrowser"
+    },
+    "8080": {
+      "label": "Back-end (API e Swagger)",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/pos-criacao.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csdevkit",
+        "dbaeumer.vscode-eslint",
+        "github.copilot-chat",
+        "openai.chatgpt",
+        "ms-ossdata.vscode-pgsql",
+        "editorconfig.editorconfig"
+      ]
+    }
+  }
+}

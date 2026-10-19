@@ -1,0 +1,24 @@
+# Back-end
+backend/**/bin/
+backend/**/obj/
+backend/TestResults/
+*.user
+
+# Front-end
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+*.tsbuildinfo
+
+# Ferramentas e sistema
+.vs/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Segredos locais — nunca versione tokens ou senhas
+.env
+.env.*
+!.env.exemplo
+appsettings.*.local.json

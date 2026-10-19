@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-dotnettools.csdevkit",
+    "dbaeumer.vscode-eslint",
+    "github.copilot-chat",
+    "openai.chatgpt",
+    "ms-ossdata.vscode-pgsql",
+    "ms-azuretools.vscode-containers",
+    "editorconfig.editorconfig"
+  ]
+}

@@ -1,0 +1,29 @@
+# Serviços de apoio ao desenvolvimento do Connexa.
+#
+#   Fora do Codespaces:  docker compose up -d db
+#   No Codespaces:       o banco sobe sozinho junto com o ambiente (.devcontainer/)
+#
+# Bancos criados: connexa (desenvolvimento) e connexa_teste (testes automatizados).
+# Para apagar todos os dados e começar do zero: docker compose down -v
+
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: connexa
+      POSTGRES_PASSWORD: connexa
+      POSTGRES_DB: connexa
+    ports:
+      - "5432:5432"
+    volumes:
+      - dados-postgres:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U connexa -d connexa"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  dados-postgres:

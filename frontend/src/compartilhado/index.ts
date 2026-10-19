@@ -1,0 +1,1 @@
+export { MensagemDeErro } from './MensagemDeErro'

@@ -1,0 +1,162 @@
+/* Estilos globais do Connexa — mobile-first.
+   Cores e espaçamentos ficam em variáveis; componentes usam as variáveis, nunca valores soltos. */
+
+:root {
+  --cor-marca: #028090;
+  --cor-destaque: #02c39a;
+  --cor-texto: #1a2332;
+  --cor-texto-suave: #4a5568;
+  --cor-fundo: #f7fafc;
+  --cor-superficie: #ffffff;
+  --cor-borda: #d5dde5;
+  --cor-erro: #b42318;
+  --cor-foco: #1a2332;
+  --raio: 0.75rem;
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 1rem;
+  --espaco-4: 1.5rem;
+  --espaco-5: 2.5rem;
+  --largura-maxima: 60rem;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0 0 var(--espaco-3);
+}
+
+h2 {
+  font-size: 1.125rem;
+  margin: 0 0 var(--espaco-3);
+}
+
+a {
+  color: var(--cor-marca);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+.pular-para-conteudo {
+  position: absolute;
+  left: var(--espaco-2);
+  top: -3rem;
+  padding: var(--espaco-2) var(--espaco-3);
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+}
+
+.pular-para-conteudo:focus {
+  top: var(--espaco-2);
+}
+
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-3);
+  padding: var(--espaco-3);
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.marca {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--cor-marca);
+  text-decoration: none;
+}
+
+.seletor-de-estudante {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-2);
+  font-size: 0.875rem;
+}
+
+select {
+  font: inherit;
+  min-height: 2.75rem;
+  padding: var(--espaco-1) var(--espaco-2);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  color: inherit;
+}
+
+.conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: var(--espaco-4) var(--espaco-3);
+}
+
+.introducao {
+  color: var(--cor-texto-suave);
+  margin: 0 0 var(--espaco-4);
+}
+
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-4);
+}
+
+.lista-de-dados {
+  display: grid;
+  gap: var(--espaco-3);
+  margin: 0;
+}
+
+.lista-de-dados dt {
+  font-size: 0.875rem;
+  color: var(--cor-texto-suave);
+}
+
+.lista-de-dados dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.mensagem {
+  margin: 0;
+  padding: var(--espaco-2) var(--espaco-3);
+  border-radius: var(--raio);
+}
+
+.mensagem--erro {
+  color: var(--cor-erro);
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+}
+
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .cabecalho {
+    padding: var(--espaco-3) var(--espaco-5);
+  }
+
+  .lista-de-dados {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

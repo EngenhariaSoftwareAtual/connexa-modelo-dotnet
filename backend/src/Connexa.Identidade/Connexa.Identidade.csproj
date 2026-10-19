@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Módulo Identidade: quem é o estudante que está usando o Connexa.
+    Na Sprint 1, a autenticação é simulada.
+  -->
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Connexa.Comum\Connexa.Comum.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Connexa.Testes" />
+  </ItemGroup>
+
+</Project>

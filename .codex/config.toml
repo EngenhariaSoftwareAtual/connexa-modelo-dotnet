@@ -1,0 +1,11 @@
+# Configuração do Codex para este projeto (Caminho 2 do roteiro da Atividade de Sprint).
+# Só é lida quando o projeto é marcado como confiável no Codex.
+# Substitua <organizacao-azure-devops> pelo nome da organização da equipe no Azure DevOps.
+#
+# Windows: se o servidor não iniciar, troque as duas linhas abaixo por
+#   command = "cmd"
+#   args = ["/c", "npx", "-y", "@azure-devops/mcp", "<organizacao-azure-devops>", "-d", "core", "work", "work-items"]
+
+[mcp_servers.azure-devops]
+command = "npx"
+args = ["-y", "@azure-devops/mcp", "<organizacao-azure-devops>", "-d", "core", "work", "work-items"]

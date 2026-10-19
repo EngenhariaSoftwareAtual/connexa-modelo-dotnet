@@ -1,0 +1,13 @@
+{
+  "dotnet.defaultSolution": "backend/Connexa.slnx",
+  "eslint.workingDirectories": ["frontend"],
+  "editor.formatOnSave": false,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "chat.tools.autoApprove": false
+}

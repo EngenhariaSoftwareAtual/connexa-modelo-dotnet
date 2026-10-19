@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Connexa.Acompanhamento/Connexa.Acompanhamento.csproj" />
+    <Project Path="src/Connexa.Api/Connexa.Api.csproj" />
+    <Project Path="src/Connexa.Comum/Connexa.Comum.csproj" />
+    <Project Path="src/Connexa.Encontros/Connexa.Encontros.csproj" />
+    <Project Path="src/Connexa.Grupos/Connexa.Grupos.csproj" />
+    <Project Path="src/Connexa.Identidade/Connexa.Identidade.csproj" />
+    <Project Path="src/Connexa.Materiais/Connexa.Materiais.csproj" />
+    <Project Path="src/Connexa.Painel/Connexa.Painel.csproj" />
+    <Project Path="src/Connexa.Perfil/Connexa.Perfil.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Connexa.Testes/Connexa.Testes.csproj" />
+  </Folder>
+</Solution>

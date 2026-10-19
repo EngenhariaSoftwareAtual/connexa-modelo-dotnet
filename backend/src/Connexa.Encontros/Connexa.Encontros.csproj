@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Módulo Encontros. Encontros dos grupos: agendamento, local ou link, confirmação de presença. -->
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Connexa.Comum\Connexa.Comum.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Connexa.Testes" />
+  </ItemGroup>
+
+</Project>
